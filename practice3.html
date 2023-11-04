@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Password Verification</title>
+</head>
+<body>
+    <label for="password1">Enter Password:</label>
+    <input type="password" id="password1" name="password1">
+    <label for="password2">Re-enter Password:</label>
+    <input type="password" id="password2" name="password2">
+    <button id="verifyButton">Verify Password</button>
+    <p id="message"></p>
+    <script>
+        document.getElementById("verifyButton").addEventListener("click", function() {
+            var password1 = document.getElementById("password1").value;
+            var password2 = document.getElementById("password2").value;
+            if (password1.length < 8 || password1 !== password2) {
+                document.getElementById("message").textContent = "Passwords do not match or are too short.";
+            } else {
+                document.getElementById("message").textContent = "Passwords matched!";
+            }
+        });
+    </script>
+</body>
+</html>

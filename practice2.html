@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Font Control</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        #content {
+            margin: 20px;
+        }
+        p {
+            border: 2px solid black; /* Default border */
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Font Control</h1>
+    <div id="content">
+        <p id="sampleText">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <label for="borderWidth">Border Width:</label>
+        <input type="number" id="borderWidth" min="0" max="10">
+        <label for="textColorPicker">Text Color (RGB):</label>
+        <input type="color" id="textColorPicker">
+        <label for="borderColorPicker">Border Color (RGB):</label>
+        <input type="color" id="borderColorPicker">
+    </div>
+    <script>
+        const borderWidthInput = document.getElementById("borderWidth");
+        const textColorPickerInput = document.getElementById("textColorPicker");
+        const borderColorPickerInput = document.getElementById("borderColorPicker");
+        const sampleText = document.getElementById("sampleText");
+        borderWidthInput.addEventListener("input", () => {
+            const borderWidth = borderWidthInput.value + "px";
+            sampleText.style.borderWidth = borderWidth;
+        });
+        textColorPickerInput.addEventListener("input", () => {
+            const textColor = textColorPickerInput.value;
+            sampleText.style.color = textColor;
+        });
+        borderColorPickerInput.addEventListener("input", () => {
+            const borderColor = borderColorPickerInput.value;
+            sampleText.style.borderColor = borderColor;
+        });
+    </script>
+</body>
+</html>
