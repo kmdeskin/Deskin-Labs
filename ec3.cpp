@@ -36,7 +36,7 @@ public:
     }
 
     virtual void displaySpecificDetails(std::ostream& os) const {
-        // Empty by default, to be overridden by derived classes
+    
     }
 };
 
